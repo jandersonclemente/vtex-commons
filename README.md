@@ -35,7 +35,7 @@ How to use it
 Here's a example of how to use the Master Data's Search
 
 ```javascript
-const Vtex = require('vtex-commons')
+const VTEX = require('vtex-commons')
 
 mondule.exports = async () => {
     vtex = new VTEX({
