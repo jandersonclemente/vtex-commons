@@ -1,0 +1,28 @@
+{
+  "name": "vtex-commons",
+  "version": "0.0.1",
+  "description": "Handy VTEX library for NodeJs",
+  "main": "vtex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jandersonclemente/vtex-commons.git"
+  },
+  "keywords": [
+    "vtex"
+  ],
+  "author": "Janderson Clemente",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jandersonclemente/vtex-commons/issues"
+  },
+  "homepage": "https://github.com/jandersonclemente/vtex-commons#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
