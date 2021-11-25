@@ -28,7 +28,7 @@ async function LoadOrder(settings,parameters){
     const json = await response.json()
 
     if(responseError){
-        throw new Error(`OMS (LOAD ORDER): ${responseError} - ${json.error.message}`)
+        throw new Error(`OMS (LOAD ORDER): ${responseError} - ${json?.error?.message}`)
     }
 
     return json
@@ -61,7 +61,7 @@ async function ListOrders(settings,parameters){
     const json = await response.json()
 
     if(responseError){
-        throw new Error(`OMS (LOAD ORDER): ${responseError} - ${json.error.message}`)
+        throw new Error(`OMS (LOAD ORDER): ${responseError} - ${json?.error?.message}`)
     }
 
     return json
@@ -93,7 +93,7 @@ async function CancelOrder(settings, parameters){
     const json = await response.json()
 
     if(responseError){
-        throw new Error(`OMS (CANCEL ORDER): ${responseError} - ${json.error.message}`)
+        throw new Error(`OMS (CANCEL ORDER): ${responseError} - ${json?.error?.message}`)
     }
 
     return json
