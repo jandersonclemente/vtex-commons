@@ -67,10 +67,11 @@ Methods
 
 #### ***Search***
 
-This method requires an object with three parameters:
+This method requires an object with four parameters:
 * entity (this is the acronym of the entity/table set in the Master Data admin)
 * rule (this is the query you want to perform)
 * fields (a string with comma separated field names or '_all' to get all the public fields)
+* range (optional - a string with the desired range of results. Ex.: "0-30". Default: "0-10")
 
 ```javascript
 
@@ -88,10 +89,9 @@ const searchResult = await vtex.MasterData().Search({
 
 #### ***Post***
 
-This method requires an object with two required parameters and one optional:
+This method requires an object with two required parameters:
 * entity (required - this is the acronym of the entity/table set in the Master Data admin)
 * data (required - an object or stringified object with the data you want to post)
-* range (optional - a string with the desired range of results. Ex.: "0-30". Default: "0-10")
 
 ```javascript
 
