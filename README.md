@@ -88,9 +88,10 @@ const searchResult = await vtex.MasterData().Search({
 
 #### ***Post***
 
-This method requires an object with two parameters:
-* entity (this is the acronym of the entity/table set in the Master Data admin)
-* data (an object or stringified object with the data you want to post)
+This method requires an object with two required parameters and one optional:
+* entity (required - this is the acronym of the entity/table set in the Master Data admin)
+* data (required - an object or stringified object with the data you want to post)
+* range (optional - a string with the desired range of results. Ex.: "0-30". Default: "0-10")
 
 ```javascript
 
