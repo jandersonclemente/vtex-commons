@@ -2,6 +2,7 @@ const helper     = require('./helper')
 const MasterData = require('./vtex-modules/MasterData')
 const OMS        = require('./vtex-modules/OMS')
 const Catalog    = require('./vtex-modules/Catalog')
+const Checkout   = require('./vtex-modules/Checkout')
 
 function Vtex(userDefaults = undefined) {
     this._settings = helper.constructorHelper(userDefaults)
@@ -51,6 +52,15 @@ Vtex.prototype.OMS = function(){
         },
         CancelOrder : async function(parameters){
             return await OMS.CancelOrder(_settings, parameters)
+        }
+    }
+}
+
+Vtex.prototype.Checkout = function(){
+    const _settings = this._settings
+    return {
+        LoadOrderformById : async function (parameters){
+            return await Checkout.LoadOrderformById(_settings, parameters)
         }
     }
 }

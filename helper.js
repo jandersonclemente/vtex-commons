@@ -19,5 +19,9 @@ module.exports.constructorHelper = (userDefaults) => {
 }
 
 module.exports.extractCredentials = (settings) => {
-    return [key = process.env[settings.appKey], token = process.env[settings.appToken]]
+    if(!settings.credentials){
+        return [key = process.env[settings.appKey], token = process.env[settings.appToken]]
+    }else{
+        return [key = settings.appKey, token = settings.appToken]
+    }
 }

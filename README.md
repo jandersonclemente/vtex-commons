@@ -278,6 +278,19 @@ vtex = new VTEX({
 
 ***REMEMBER: appKey AND appToken SHOULD NOT BE FILLED WITH YOUR CREDENTIALS, BUT WITH THE NAMES OF THE ENVIROMENT VARIABLES THAT CONTAIN THEM.***
 
+Overwriting credentials behavior
+------------
+If you really need to provide the credentials directly to the contructor, say from a query result, you can do this using the following snippet:
+
+```javascript
+vtex = new VTEX({
+    store : 'dummystore',
+    appKey : 'vtexappkey-dummiestore-ABCDEF', //the real key
+    appToken : 'REWREWRW5435435REWREW432RWFSGFDYTR543TGEGFDFDSREWr34TREGFDGDGDWSADWEFDSDFDSAFSADEFGEFD', //the real token
+    credentials: true
+})
+```
+
 Notes
 -------------
 
