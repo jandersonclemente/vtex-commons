@@ -7,7 +7,6 @@ async function LoadOrderformById(settings,parameters){
     }
 
     const [key, token] = helper.extractCredentials(settings)
-    console.log(key,token)
     const loadOrderUrl = `https://${settings.store}.${settings.env}/api/checkout/pub/orderForm/${parameters.orderformId}`
     const options = {
         method: 'GET',
