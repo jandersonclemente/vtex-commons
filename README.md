@@ -20,6 +20,8 @@ This module wrapps the most common used VTEX APIs requests. Currently containing
     * Load Product
     * Load Product by RefId
     * Load SKU
+* Checkout
+    * Load Orderform by Id
 
    
 How to install
@@ -252,6 +254,23 @@ const searchResult = await vtex.Catalog().GetProductByRefId({
 
 ```
 
+### Checkout
+
+#### ***LoadOrderformById***
+This method requires an object with one parameter:
+* orderformId (a string with the id from the orderform object you want to load)
+
+```javascript
+
+vtex = new VTEX({
+    store : 'dummystore'
+})
+
+const orderForm = await vtex.Checkout().LoadOrderformById({
+    orderformId : 'hgcfgtr456yhef'
+})
+
+```
 
 Defaults
 ------------
