@@ -1,6 +1,6 @@
 {
   "name": "vtex-commons",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Handy VTEX library for NodeJs",
   "main": "vtex.js",
   "scripts": {

@@ -22,6 +22,8 @@ This module wrapps the most common used VTEX APIs requests. Currently containing
     * Load SKU
 * Checkout
     * Load Orderform by Id
+* Giftcard
+    * Create Giftcard
 
    
 How to install
