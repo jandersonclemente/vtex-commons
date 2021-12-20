@@ -271,6 +271,31 @@ const orderForm = await vtex.Checkout().LoadOrderformById({
 })
 
 ```
+### Giftcard
+
+#### ***CreateGiftcard***
+This method requires an object with the following parameters:
+* value (a number with the value that will be added to the giftcard)
+* profileId (optional - client email or id. If an account is found with this email, the VTEX API will automatically look for the client's document. If this parameter is not passed, the voucher will be created with a fake address)
+* multipleCredits (optional bool (default: false) - Defines if the giftcard balance can be changed)
+* multipleRedemptions (optional bool (default: false) - Defines if the giftcard can be used to make new purchases until its value is completely used)
+* restrictedToOwner (optional bool (default: false) - Defines if the giftcard can only be used for a specified client's id/email)
+* caption (optional string (default: 'Giftcard') - Giftcard's caption)
+* expiringDate (optional date (default: 9999-12-31T23:59:59.100Z) - Defines the giftcard's expiring date)
+
+It returns the giftcard's redemption code.
+
+```javascript
+
+vtex = new VTEX({
+    store : 'dummystore'
+})
+
+const giftcard = await vtex.Giftcard().CreateGiftcard({
+    value : 1
+})
+
+```
 
 Defaults
 ------------

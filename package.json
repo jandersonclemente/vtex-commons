@@ -1,6 +1,6 @@
 {
   "name": "vtex-commons",
-  "version": "0.1.8",
+  "version": "0.2.8",
   "description": "Handy VTEX library for NodeJs",
   "main": "vtex.js",
   "scripts": {
@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/jandersonclemente/vtex-commons#readme",
   "dependencies": {
-    "node-fetch": "^2.6.6"
+    "node-fetch": "^2.6.6",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "express": "^4.17.1"
