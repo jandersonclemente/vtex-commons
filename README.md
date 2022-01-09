@@ -24,6 +24,8 @@ This module wrapps the most common used VTEX APIs requests. Currently containing
     * Load Orderform by Id
 * Giftcard
     * Create Giftcard
+* Utils
+    * uuid
 
    
 How to install
@@ -296,6 +298,31 @@ vtex = new VTEX({
 const giftcard = await vtex.Giftcard().CreateGiftcard({
     value : 1
 })
+
+```
+
+Utils
+------------
+
+This module is intended for any sort of tools (third party or not) that might be hepful when using vtex-tools.
+
+### uuid
+This a very simple implementation of the well known npm module https://www.npmjs.com/package/uuid
+Good for using as unique ids in master data's entities, cache and session identifying.
+
+```javascript
+
+vtex = new VTEX({
+    store : 'dummystore'
+})
+
+//default V4
+vtex.Utils().uuid()
+//'1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+
+//using V1
+vtex.Utils().uuid(1)
+//'2c5ea4c0-4067-11e9-8bad-9b1deb4d3b7d'
 
 ```
 

@@ -1,9 +1,12 @@
-const helper     = require('./helper')
-const MasterData = require('./vtex-modules/MasterData')
-const OMS        = require('./vtex-modules/OMS')
-const Catalog    = require('./vtex-modules/Catalog')
-const Checkout   = require('./vtex-modules/Checkout')
-const Giftcard   = require('./vtex-modules/Giftcard')
+const helper        = require('./helper')
+//////////////////////////////////////////////////////////
+const MasterData    = require('./vtex-modules/MasterData')
+const OMS           = require('./vtex-modules/OMS')
+const Catalog       = require('./vtex-modules/Catalog')
+const Checkout      = require('./vtex-modules/Checkout')
+const Giftcard      = require('./vtex-modules/Giftcard')
+//////////////////////////////////////////////////////////
+const publicHelpers = require('./public-helpers') 
 
 function Vtex(userDefaults = undefined) {
     this._settings = helper.constructorHelper(userDefaults)
@@ -77,6 +80,14 @@ Vtex.prototype.Giftcard = function(){
 
 Vtex.prototype.settings = function(){
     return this._settings
+}
+
+Vtex.prototype.Utils = function(){
+    return {
+        uuid : function(v){
+            return publicHelpers.uuid(v)
+        }
+    }
 }
 
 module.exports = Vtex
