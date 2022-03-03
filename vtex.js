@@ -5,6 +5,7 @@ const OMS           = require('./vtex-modules/OMS')
 const Catalog       = require('./vtex-modules/Catalog')
 const Checkout      = require('./vtex-modules/Checkout')
 const Giftcard      = require('./vtex-modules/Giftcard')
+const Logistics     = require('./vtex-modules/Logistics')
 //////////////////////////////////////////////////////////
 const publicHelpers = require('./public-helpers') 
 
@@ -74,6 +75,15 @@ Vtex.prototype.Giftcard = function(){
     return {
         CreateGiftcard : async function (parameters){
             return await Giftcard.CreateGiftcard(_settings, parameters)
+        }
+    }
+}
+
+Vtex.prototype.Logistics = function(){
+    const _settings = this._settings
+    return {
+        ListReservationById : async function (parameters){
+            return await Logistics.ListReservationById(_settings, parameters)
         }
     }
 }

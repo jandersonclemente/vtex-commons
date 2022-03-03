@@ -24,6 +24,8 @@ This module wrapps the most common used VTEX APIs requests. Currently containing
     * Load Orderform by Id
 * Giftcard
     * Create Giftcard
+* Logistics
+    * ListReservationById
 * Utils
     * uuid
 
@@ -297,6 +299,23 @@ vtex = new VTEX({
 
 const giftcard = await vtex.Giftcard().CreateGiftcard({
     value : 1
+})
+
+```
+
+### Logistics
+#### ***ListReservationById***
+This method requires a object with the following parameter:
+* id (this is the "lockId" wich can be found among the order details using the 'loadOrder' method)
+
+```javascript
+
+vtex = new VTEX({
+    store : 'dummystore'
+})
+
+const giftcard = await vtex.Logistics().ListReservationById({
+    id : '00-1234567890-01' 
 })
 
 ```
