@@ -6,8 +6,9 @@ async function Search(settings, parameters){
         throw new Error('MASTER DATA (SEARCH): The parameters "entity", "rule" and "fields" are required')
     }
 
+    const cacheKiller = Date.now()
     const [key, token] = helper.extractCredentials(settings)
-    const searchUrl = `https://${settings.store}.${settings.env}/api/dataentities/${parameters.entity}/search?_where=(${encodeURI(parameters.rule)})&_fields=${encodeURI(parameters.fields)}`
+    const searchUrl = `https://${settings.store}.${settings.env}/api/dataentities/${parameters.entity}/search?_where=(${encodeURI(parameters.rule)})&_fields=${encodeURI(parameters.fields)}&_v=${cacheKiller}`
     const options = {
         method: 'GET',
         headers: {
