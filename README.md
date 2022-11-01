@@ -389,3 +389,5 @@ Notes
 Aways wrapp the request inside a *try catch*. The module will throw an error that will break the execution if something goes wrong with the request.
 
 Fell free to improve this module. Pull requests will be welcome. Just try to keep the existing structure. 
+
+Thanks
