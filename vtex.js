@@ -6,6 +6,7 @@ const Catalog       = require('./vtex-modules/Catalog')
 const Checkout      = require('./vtex-modules/Checkout')
 const Giftcard      = require('./vtex-modules/Giftcard')
 const Logistics     = require('./vtex-modules/Logistics')
+const Subscriptions = require('./vtex-modules/Subscriptions')
 //////////////////////////////////////////////////////////
 const publicHelpers = require('./public-helpers') 
 
@@ -84,6 +85,15 @@ Vtex.prototype.Logistics = function(){
     return {
         ListReservationById : async function (parameters){
             return await Logistics.ListReservationById(_settings, parameters)
+        }
+    }
+}
+
+Vtex.prototype.Subscriptions = function(){
+    const _settings = this._settings
+    return {
+        List : async function(parameter){
+            return await Subscriptions.List(_settings, parameter)
         }
     }
 }

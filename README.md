@@ -314,11 +314,29 @@ vtex = new VTEX({
     store : 'dummystore'
 })
 
-const giftcard = await vtex.Logistics().ListReservationById({
+const reservation = await vtex.Logistics().ListReservationById({
     id : '00-1234567890-01' 
 })
 
 ```
+
+### Subscriptions
+#### ***List***
+If you want add filters to the request or list a specific subscription, you'll have to pass the 'rule' parameter.
+If the rule parameters is not passed, the method will return the first page of subscriptions (limited by 15 lines by default).
+
+```javascript
+
+vtex = new VTEX({
+    store : 'dummystore'
+})
+
+const subs = await Subscriptions().List({
+    rule : 'customerEmail=test%40test.com&page=1&size=15'
+})
+
+```
+
 
 Utils
 ------------
