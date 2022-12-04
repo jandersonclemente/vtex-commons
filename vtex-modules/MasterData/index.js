@@ -70,6 +70,11 @@ async function Post(settings, parameters){
     const json = await response.json()
     
     if(responseError){
+        console.error({
+            message: `MASTER DATA (POST): ${responseError} - ${json.Message}`,
+            payload: JSON.stringify(body)
+        })
+
         throw new Error(`MASTER DATA (POST): ${responseError} - ${json.Message}`)
     }
     
@@ -136,6 +141,10 @@ async function Patch(settings, parameters){
     const response = await fetch(patchUrl, options)
     
     if(!response.ok){
+        console.error({
+            message: `MASTER DATA (PATCH): ${response.statusText}`,
+            payload: JSON.stringify(body)
+        })
         throw new Error(`MASTER DATA (PATCH): ${response.statusText}`)
     }
 
